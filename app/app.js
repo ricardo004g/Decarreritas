@@ -13,8 +13,6 @@ app.listen(app.get('port'), ()=> {
     console.log("http://localhost:3000");
 });
 
-
-
 //routes
 app.use("/", routes);
 
