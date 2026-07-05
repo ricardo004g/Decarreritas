@@ -15,6 +15,3 @@ app.listen(app.get('port'), ()=> {
 
 //routes
 app.use("/", routes);
-
-
-
