@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0;
+    font-family: 'Courier Prime', monospace;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    box-shadow: 
+    15px 15px 30px #bebebe,  /* 1. Sombra oscura (abajo - derecha) */
+    -15px -15px 30px #ffffff;
+}
+
+.card {
+    width: 200px;
+    height: 70px;
+    margin: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom,#EE9CA7,#FFDDE1);
+}
+
+.banner {
+    background: linear-gradient(45deg,#EE9CA7,#FFDDE1);
+    border-radius: 15px;
+    height: 55px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
