@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec node app/index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +20,8 @@
   "dependencies": {
     "express": "^5.2.1",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

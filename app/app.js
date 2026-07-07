@@ -13,5 +13,8 @@ app.listen(app.get('port'), ()=> {
     console.log("http://localhost:3000");
 });
 
+//static files
+app.use(express.static(path.join(__dirname, "public")));
+
 //routes
 app.use("/", routes);
