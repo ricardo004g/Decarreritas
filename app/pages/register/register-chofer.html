@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+    <legend>Datos Personales</legend>
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" name="nombres" required>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" name="apellidos" required>
+
+    <label for="cedula">Cédula de Identidad:</label>
+    <input type="text" id="cedula" name="cedula" pattern="[0-9]+" title="Solo números" required>
+
+    <label for="telefono">Teléfono Personal:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+    </fieldset>
+
+    <fieldset>
+    <legend>Contactos de Emergencia</legend>
+    <!-- Contacto 1 -->
+    <label for="nombre_emergencia_1">Nombre del Contacto 1:</label>
+    <input type="text" id="nombre_emergencia_1" name="nombre_emergencia_1" required>
+    <label for="tel_emergencia_1">Teléfono 1:</label>
+    <input type="tel" id="tel_emergencia_1" name="tel_emergencia_1" required>
+
+    <!-- Contacto 2 -->
+    <label for="nombre_emergencia_2">Nombre del Contacto 2:</label>
+    <input type="text" id="nombre_emergencia_2" name="nombre_emergencia_2" required>
+    <label for="tel_emergencia_2">Teléfono 2:</label>
+    <input type="tel" id="tel_emergencia_2" name="tel_emergencia_2" required>
+</fieldset>
+
+</body>
+</html>

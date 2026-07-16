@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec node app/index.js"
+    "dev": "nodemon --exec node app/app.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
   "type": "module",
   "dependencies": {
     "express": "^5.2.1",
+    "express-myconnection": "^1.0.4",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
