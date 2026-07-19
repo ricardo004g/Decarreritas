@@ -14,7 +14,7 @@ app.set("port", process.env.PORT || 3000);
 app.listen(app.get('port'), ()=> {
     console.log("http://localhost:3000");
 });
-
+/*
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
@@ -22,7 +22,7 @@ app.use(myConnection(mysql, {
     port:3306,
     database: 'crudnodemysql'
 }, 'single'));
-
+*/
 app.use(express.urlencoded({extended: false}));
 
 //static files
