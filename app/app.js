@@ -3,6 +3,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import mysql from "mysql";
 import myConnection from "express-myconnection";
+
+//PATH
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import routes from "./routes/routes.js";
 
