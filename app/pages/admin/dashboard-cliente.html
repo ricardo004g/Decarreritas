@@ -1,11 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Decarrerita - Panel de Cliente</title>
+    
+    <!-- ========================================== -->
+    <!-- AQUÍ EMPIEZA EL CSS                        -->
+    <!-- ========================================== -->
+    <style>
+        /* Reseteo básico y tipografía */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9; /* Fondo gris claro */
+            color: #333;
+        }
+
+        /* Barra de Navegación (Navbar) */
+        .navbar {
+            background-color: #1a252f; /* Azul oscuro elegante */
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Contenedor Principal y Grid */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+            gap: 1.5rem;
+        }
+
+        /* Responsividad para móviles */
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr; /* Una sola columna en teléfonos */
+            }
+        }
+
+        /* Tarjetas (Cards) */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+
+        .balance-card {
+            text-align: center;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .balance-card h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .balance-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Formularios y Botones */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        /* Estilos de botones */
+        .btn-primary, .btn-secondary, .btn-logout {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #2ecc71; /* Verde para acción principal */
+            color: white;
+        }
+        .btn-primary:hover { background-color: #27ae60; }
+
+        .btn-secondary {
+            background-color: #3498db; /* Azul para recargas */
+            color: white;
+        }
+        .btn-secondary:hover { background-color: #2980b9; }
+
+        .btn-logout {
+            background-color: #e74c3c;
+            color: white;
+            width: auto;
+            padding: 0.5rem 1rem;
+        }
+        .btn-logout:hover { background-color: #c0392b; }
+
+        /* Tabla de Historial */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .history-table th, 
+        .history-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .history-table th {
+            background-color: #f8f9fa;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .text-success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+    <!-- ========================================== -->
+    <!-- AQUÍ TERMINA EL CSS                        -->
+    <!-- ========================================== -->
 </head>
 <body>
-    
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-brand">🚗 Decarrerita</div>
+        <div class="nav-user">
+            <span>Hola, <strong>Cliente</strong></span>
+            <button class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal del Dashboard -->
+    <main class="dashboard-container">
+        
+        <!-- Tarjeta del Saldo -->
+        <section class="card balance-card">
+            <h2>Tu Saldo Actual</h2>
+            <div class="balance-amount">$ 25.50</div>
+        </section>
+
+        <!-- Cuadrícula para Formularios e Historial -->
+        <div class="dashboard-grid">
+            
+            <!-- Columna Izquierda: Acciones -->
+            <div class="actions-column">
+                
+                <!-- Tarjeta: Solicitar Traslado -->
+                <div class="card">
+                    <h3>📍 Solicitar Traslado</h3>
+                    <form id="form-traslado">
+                        <div class="form-group">
+                            <label for="punto-a">Punto de Origen (A):</label>
+                            <input type="text" id="punto-a" placeholder="Ej: C.C. Orinokia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="punto-b">Punto de Destino (B):</label>
+                            <input type="text" id="punto-b" placeholder="Ej: Alta Vista" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Buscar Chofer</button>
+                    </form>
+                </div>
+
+                <!-- Tarjeta: Recargar Saldo -->
+                <div class="card">
+                    <h3>💳 Recargar Saldo</h3>
+                    <form id="form-recarga">
+                        <div class="form-group">
+                            <label for="banco">Banco de Origen:</label>
+                            <select id="banco" required>
+                                <option value="">Seleccione un banco...</option>
+                                <option value="banesco">Banesco</option>
+                                <option value="mercantil">Mercantil</option>
+                                <option value="provincial">Provincial</option>
+                                <option value="bdv">Banco de Venezuela</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="referencia">Nro. de Referencia:</label>
+                            <input type="text" id="referencia" placeholder="Últimos 6 dígitos" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="monto">Monto a Recargar:</label>
+                            <input type="number" id="monto" step="0.01" placeholder="Ej: 10.00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-recarga">Fecha de Transferencia:</label>
+                            <input type="date" id="fecha-recarga" required>
+                        </div>
+                        <button type="submit" class="btn-secondary">Registrar Recarga</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Columna Derecha: Historial -->
+            <div class="history-column">
+                <div class="card">
+                    <h3>🕒 Historial de Recargas</h3>
+                    <div class="table-responsive">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Banco</th>
+                                    <th>Ref</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Datos de ejemplo estáticos -->
+                                <tr>
+                                    <td>20/07/2026</td>
+                                    <td>Banesco</td>
+                                    <td>458963</td>
+                                    <td class="text-success">+$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td>15/07/2026</td>
+                                    <td>Mercantil</td>
+                                    <td>125478</td>
+                                    <td class="text-success">+$20.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
 </body>
 </html>
