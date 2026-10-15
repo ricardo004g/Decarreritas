@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec node app/app.js"
+    "start": "node app/app.js",
+    "dev": "node --env-file=.env --watch app/app.js"
   },
   "keywords": [],
   "author": "",
