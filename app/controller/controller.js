@@ -14,6 +14,7 @@ controller.loginClient = (req, res) => {
 controller.loginChofer = (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/login/login-chofer.html"));
 }
+
 controller.registerClient = (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/register/register-cliente.html"));
 };

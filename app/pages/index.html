@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-index.css">
+    <title>Document</title>
 
-    <!--Material Icon-->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
 
-    <!--Fuente Courier Prime-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        }
 
-    <title>Decarreritas.com</title>
+        .container{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        #login-form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+    </style>
+
 </head>
-
 <body>
-    <div class="banner">
-        <h2>Decarreritas</h2>
+    <div class="container">
+        <div class="sticker">Login Decarreritas</div>
+        <form action="" id="login-form">
+            <label for="email">email</label>
+            <input type="email" name="" id="">
+
+
+            <label for="password">password</label>
+            <input type="password" name="" id="">
+        </form>
+        <p>¿Aún no tienes una cuenta? <a href="/app/pages/register.html">Registrate aquí</a></p>
+
     </div>
-    
-    <main class="main-container">
-        <div class="container">
-            <h2 class="tittle">Inicia sesión como:</h2>
-
-            <div class="cards-wrapper">
-                <a href="/login-cliente" class="card">
-                    Cliente<span class="material-symbols-outlined">arrow_forward</span>
-                    Solicita un viaje y llega rápido a tu destino.
-                </a>
-    
-                <a href="/login-chofer" class="card">
-                    Chofer<span class="material-symbols-outlined">arrow_forward</span>
-                    Conduce, maneja tu tiempo y genera ingresos.
-                </a>
-            </div>
-        </div>
-    </main>
-
 </body>
-
 </html>
