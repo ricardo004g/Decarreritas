@@ -21,7 +21,6 @@
   "dependencies": {
     "express": "^5.2.1",
     "express-myconnection": "^1.0.4",
-    "mysql": "^2.18.1",
     "pg": "^8.23.1"
   },
   "devDependencies": {
