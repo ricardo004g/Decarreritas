@@ -11,6 +11,11 @@ import { methods as authentication } from "../controller/authentication.controll
 import controller from "../controller/controller.js";
 
 routes.get("/", controller.index);
+
+routes.get("/register", async(req, res)=> {
+    res.sendFile(path.join(__dirname, "../pages/register.html"));
+});
+
 routes.get("/login-cliente", controller.loginClient);
 routes.get("/register-cliente", controller.registerClient);
 routes.get("/register-chofer", controller.registerChofer);

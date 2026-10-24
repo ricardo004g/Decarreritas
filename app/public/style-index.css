@@ -9,7 +9,7 @@ body {
     
     font-family: "Inter", sans-serif;
     /*background-color: var(--colorFondo);*/
-    background-image: url("./img/morado.png");
+    background-image: url("./img/cutecat.jpg");
     background-position: center;
 
 }
@@ -67,7 +67,7 @@ body {
     flex-direction: row; 
     justify-content: center; /* Centra las cartas */
     gap: 0px; /* Espacio horizontal entre las cartas */
-    
+    font-weight: bold;
 }
 
 .banner {
