@@ -3,6 +3,7 @@ import path from "path";
 import {PORT} from "./config.js";
 import { fileURLToPath } from "url";
 import { pool } from "./db.js";
+import morga from "morgan";
 
 //PATH
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -10,6 +11,7 @@ import routes from "./routes/routes.js";
 
 const app = express();
 
+app.use(morga("dev"));
 
 app.use(express.urlencoded({extended: false}));
 
