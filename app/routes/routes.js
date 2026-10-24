@@ -15,6 +15,11 @@ routes.get("/login-cliente", controller.loginClient);
 routes.get("/register-cliente", controller.registerClient);
 routes.get("/register-chofer", controller.registerChofer);
 routes.get("/login-chofer", controller.loginChofer);
+
 routes.post("/api/register-client", authentication.registerClient);
+
+routes.post("/api/login", async(req, res) => {
+    
+});
 
 export default routes;

@@ -30,7 +30,13 @@
             flex-direction: column;
         }
 
+        .escondido {
+            display: none;
+        }
+
     </style>
+
+    <script src="/js/login.js" defer></script>
 
 </head>
 <body>
@@ -38,11 +44,14 @@
         <div class="sticker">Login Decarreritas</div>
         <form action="" id="login-form">
             <label for="email">email</label>
-            <input type="email" name="" id="">
+            <input type="email" name="email" id="email">
 
 
             <label for="password">password</label>
-            <input type="password" name="" id="">
+            <input type="password" name="password" id="password">
+
+            <button type="submit">Iniciar sesión</button>
+            <p class="error escondido">Error al iniciar sesión</p>
         </form>
         <p>¿Aún no tienes una cuenta? <a href="/app/pages/register.html">Registrate aquí</a></p>
 
