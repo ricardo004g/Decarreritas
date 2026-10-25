@@ -19,5 +19,9 @@ document.getElementById('login-form').addEventListener('submit', async(e)=> {
         }
     );
     
-    console.log('email: ', email, 'password: ', password);
+    const resJson = await res.json();
+
+    if(resJson.redirect){
+
+    }
 });

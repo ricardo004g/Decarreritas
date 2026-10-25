@@ -1,9 +1,5 @@
-async function loginClient(req, res) {
-    
-}
-
-async function loginChofer(req, res) {
-    
+async function login(req, res) {
+    const {email, password} = req.body;
 }
 
 async function registerChofer(req, res) {
@@ -11,16 +7,12 @@ async function registerChofer(req, res) {
 }
 
 async function registerClient(req, res) {
-    const {name, ci, email, password} = req.body;
-    
-    req.getConnection((err, conn) => {
-        
-    })
+    const {name, lastname, ci, tel, password, email} = req.body;
+
 }
 
 export const methods = {
-    loginClient,
-    loginChofer,
+    login,
     registerClient,
     registerChofer
 }
