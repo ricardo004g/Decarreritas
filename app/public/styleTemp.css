@@ -3,6 +3,9 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
+    background-image: url("/img/rover.gif");
+    background-position: center;
 }
 
 .container-main {
@@ -11,11 +14,18 @@ body{
     border: 1px solid black;
     border-radius: 10px;
     padding: 40px;
+
+    background-color: white;
 }
 
 #login-form{
     display: flex;
     justify-content: center;
+    flex-direction:column;
+}
+
+#register-form {
+    display: flex;
     flex-direction:column;
 }
 

@@ -7,7 +7,7 @@ document.getElementById('login-form').addEventListener('submit', async(e)=> {
     const email = e.target.children.email.value;
     const password = e.target.children.password.value;
     
-    const res = await fetch('https://localhost:3000/api/login',
+    const res = await fetch('http://localhost:3000/api/login',
         {
             method: 'POST',
             headers: {
