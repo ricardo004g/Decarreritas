@@ -13,6 +13,7 @@ const app = express();
 
 app.use(morga("dev"));
 
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //static files
