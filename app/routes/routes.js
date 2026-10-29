@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-import { methods as authentication } from "../controller/authentication.controller.js";
+import { login, registerChofer, registerCustomer} from "../controller/authentication.controller.js";
 
 import controller from "../controller/controller.js";
 
@@ -21,8 +21,8 @@ routes.get("/register-cliente", controller.registerClient);
 routes.get("/register-chofer", controller.registerChofer);
 routes.get("/login-chofer", controller.loginChofer);
 
-routes.post("/api/register-customer", authentication.registerCustomer);
+routes.post("/api/register-customer", registerCustomer);
 
-routes.post("/api/login",authentication.login);
+routes.post("/api/login", login);
 
 export default routes;
