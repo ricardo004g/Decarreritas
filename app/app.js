@@ -3,7 +3,7 @@ import path from "path";
 import {PORT} from "./config.js";
 import { fileURLToPath } from "url";
 import { pool } from "./db.js";
-import morga from "morgan";
+import morgan from "morgan";
 
 //PATH
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -11,7 +11,7 @@ import routes from "./routes/routes.js";
 
 const app = express();
 
-app.use(morga("dev"));
+app.use(morgan("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -21,6 +21,18 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //routes
 app.use("/", routes);
+
+app.use((err, req, res, next) =>{
+    console.error("Error no controlado: ", err.stack || err);
+
+    const statusCode = err.statusCode || 500;
+    const message = err.message || "Ocurrio un error interno en el servidor";
+
+    res.status(statusCode).json({
+        status: "error",
+        message: message
+    });
+});
 
 const testConection = async () => {
     try {
