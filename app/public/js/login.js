@@ -22,6 +22,6 @@ document.getElementById('login-form').addEventListener('submit', async(e)=> {
     const resJson = await res.json();
 
     if(resJson.redirect){
-
+        window.location.href = resJson.redirect;
     }
 });

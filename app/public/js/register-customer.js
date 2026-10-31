@@ -5,7 +5,7 @@ document.getElementById("register-form").addEventListener("submit", async(e) => 
 
     // console.log(e);
 
-    const {name, lastname, ci, tel, password, email} = e.target.children;
+    const {name, lastname, ci, tel, email, password} = e.target.children;
 
     const res = await fetch("http://localhost:3000/api/register-customer", {
         method: "POST",
@@ -17,14 +17,14 @@ document.getElementById("register-form").addEventListener("submit", async(e) => 
             lastname: lastname.value,
             ci: ci.value,
             tel: tel.value,
-            password: password.value,
-            email: email.value
+            email: email.value,
+            password: password.value
         })
     });
 
     const resJson = await res.json();
 
     if(resJson.redirect) {
-        
+        window.location.href = resJson.redirect;
     };
 });
