@@ -23,4 +23,8 @@ controller.registerChofer = (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/register/register-chofer.html"));
 };
 
+controller.dashboardCustomer = (req, res) => {
+    res.sendFile(path.join(__dirname, "../pages/admin/dashboard-customer.html"));
+};
+
 export default controller;

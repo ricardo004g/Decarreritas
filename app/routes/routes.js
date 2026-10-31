@@ -20,6 +20,7 @@ routes.get("/login-cliente", controller.loginClient);
 routes.get("/register-cliente", controller.registerClient);
 routes.get("/register-chofer", controller.registerChofer);
 routes.get("/login-chofer", controller.loginChofer);
+routes.get("/dashboard-customer", controller.dashboardCustomer);
 
 routes.post("/api/register-customer", registerCustomer);
 
