@@ -4,6 +4,7 @@ import {PORT} from "./config.js";
 import { fileURLToPath } from "url";
 import { pool } from "./db.js";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 
 //PATH
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -12,6 +13,8 @@ import routes from "./routes/routes.js";
 const app = express();
 
 app.use(morgan("dev"));
+//para leer las cookies
+app.use(cookieParser());
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
