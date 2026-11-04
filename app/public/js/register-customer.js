@@ -3,11 +3,10 @@ const btnError = document.getElementsByClassName("error")[0];
 document.getElementById("register-form").addEventListener("submit", async(e) => {
     e.preventDefault();
 
-    // console.log(e);
-
     const {name, lastname, ci, tel, email, password} = e.target.children;
 
-    const res = await fetch("http://localhost:3000/api/register-customer", {
+    const res = await fetch("http://localhost:3000/api/register-customer", 
+        {
         method: "POST",
         headers:{
             "Content-Type": "Application/Json"

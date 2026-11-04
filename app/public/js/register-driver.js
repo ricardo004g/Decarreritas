@@ -5,7 +5,8 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 
     const {name, lastname, ci, tel, email, password} = e.target.children;
 
-    const res = await fetch("http://localhost/api/register-driver", {
+    const res = await fetch("http://localhost:3000/api/register-driver", 
+        {
         method: "POST",
         headers: {
             "Content-Type" : "Application/Json"
@@ -20,9 +21,9 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     });
 
-    if(!res.ok) {}
+    //if(!res.ok) {}
 
-    const resJson = res.json();
+    const resJson = await res.json();
 
     if(resJson.redirect) {
         window.location.href = resJson.redirect;
