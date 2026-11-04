@@ -51,8 +51,8 @@ export const login = catchAsync(async (req, res) => {
     }
 });
 
-export const registerChofer = catchAsync(async (req, res) => {
-    const { name, lastname, ci, tel, password, email } = req.body;
+export const registerDriver = catchAsync(async (req, res) => {
+    const { name, lastname, ci, tel, email, password } = req.body;
 
     if (!name || !lastname || !ci || !tel || !password || !email) {
         return res.status(400).send({
@@ -72,8 +72,10 @@ export const registerChofer = catchAsync(async (req, res) => {
     const salt = await bcrypt.genSalt(7);
     const passwordHash = await bcrypt.hash(password, salt);
 
-    const idUser = UserModel.insertUser(3, name, lastname, email, passwordHash);
-    await DriverModels.insertDriver(idUser, ci, tel);
+    const idUser = await UserModel.insertUser(3, name, lastname, email, passwordHash);
+
+    console.log(idUser);
+    await DriverModels.insertDriver(Number(idUser), ci, tel);
 
     return res.status(201).send({
         status: "ok",

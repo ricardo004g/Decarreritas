@@ -8,11 +8,11 @@ controller.index = (req, res) => {
 };
 
 controller.registerClient = (req, res) => {
-    res.sendFile(path.join(__dirname, "../pages/register/register-cliente.html"));
+    res.sendFile(path.join(__dirname, "../pages/register/register-customer.html"));
 };
 
 controller.registerChofer = (req, res) => {
-    res.sendFile(path.join(__dirname, "../pages/register/register-chofer.html"));
+    res.sendFile(path.join(__dirname, "../pages/register/register-driver.html"));
 };
 
 controller.dashboardCustomer = (req, res) => {
