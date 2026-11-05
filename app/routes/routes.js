@@ -7,11 +7,12 @@ import controller from "../controller/controller.js";
 import { onlyPublic, onlyAdmin } from "../middlewares/authorization.js";
 
 //rutas
-routes.get("/", controller.index);
+routes.get("/", onlyPublic, controller.index);
 routes.get("/register", controller.register);
 routes.get("/register-customer", controller.registerClient);
 routes.get("/register-driver", controller.registerChofer);
 routes.get("/dashboard-customer", onlyAdmin, controller.dashboardCustomer);
+routes.get("/dashboard-driver", onlyAdmin, controller.dashboardDriver);
 routes.post("/api/register-customer", registerCustomer);
 routes.post("/api/register-driver", registerDriver);
 routes.post("/api/login", login);

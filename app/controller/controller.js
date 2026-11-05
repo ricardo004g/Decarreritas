@@ -19,6 +19,10 @@ controller.dashboardCustomer = (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/admin/dashboard-customer.html"));
 };
 
+controller.dashboardDriver = (req, res) => {
+    res.sendFile(path.join(__dirname, "../pages/admin/dashboard-driver.html"));
+};
+
 controller.register = (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/register.html"));
 }
