@@ -20,6 +20,8 @@ export const onlyAdmin = async (req, res, next) => {
 
 async function checkCookie(req) {
     try{
+        if(!req.headers.cookie){return false};
+        
         const cookieJWT = req.headers.cookie.split("; ").find((value) => value.startsWith("jwt=")).slice(4);
         const decodificado = jsonwebtoken.verify(cookieJWT, JWT_SECRET);
         console.log(decodificado);
